@@ -21,11 +21,11 @@ let width text =
   in
   walk_text calc_width 0 text
 
-let wrap limit text =
+let wrap width text =
   let result (r, _) = r in
   let add_newline inside_ansi_seq grapheme (wrapped_text, len) =
     match inside_ansi_seq with
-    | false when len >= limit -> (wrapped_text ^ "\n" ^ grapheme, 1)
+    | false when len >= width -> (wrapped_text ^ "\n" ^ grapheme, 1)
     | false -> (wrapped_text ^ grapheme, len + 1)
     | true -> (wrapped_text ^ grapheme, len)
   in
