@@ -1,0 +1,4 @@
+(executable
+(public_name examples)
+ (name main)
+ (libraries shape-the-term))

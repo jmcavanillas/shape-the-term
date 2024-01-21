@@ -1,0 +1,17 @@
+_opam
+_build
+_boot
+_perf
+_coverage
+__pycache__
+*.install
+
+# vim swap files
+*.swp
+*.swo
+
+# emacs lock files
+.#*
+
+# vscode settings
+.vscode

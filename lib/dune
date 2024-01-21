@@ -1,0 +1,4 @@
+(library
+ (name shape_the_term)
+ (public_name shape-the-term)
+ (libraries uuseg))
