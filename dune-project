@@ -11,13 +11,13 @@
 
 (maintainers "Javier Martínez Cavanillas")
 
-(license LICENSE)
+(license MIT)
 
 (documentation https://github.com/jmcavanillas/shape-the-term)
 
 (package
  (name shape-the-term)
- (synopsis "A collection of ANSI-aware methods helping you to transform blocks of text in OCaml.")
+ (synopsis "A collection of ANSI-aware methods helping you to transform blocks of text in OCaml")
  (description "A collection of ANSI-aware methods helping you to transform blocks of text in OCaml. This means you can still style your terminal output with ANSI escape sequences without them affecting operations & algorithms. Inspired by https://github.com/muesli/reflow")
  (depends ocaml dune uuseg (alcotest :with-test))
  (tags
