@@ -32,6 +32,12 @@ let wrap_tests = "wrap", [
     |> Alcotest.(check string) "same as" 
     "\x1B[38;2;249;38;114mWe\x1B[0m\x1B[38;2;248;248;242m ❤️‍🔥\n \x1B[0m\x1B[38;2;248;248;242moca\nml\x1B[0m\x1B[38;2;248;248;242m 🐫"
   end;
+  "should take into account existing newlines" -: begin fun () ->
+    "\x1B[38;2;249;38;114mWe\n\x1B[0m\x1B[38;2;248;248;242m ❤️‍🔥 \x1B[0m\x1B[38;2;248;248;242mocaml\x1B[0m\x1B[38;2;248;248;242m 🐫" 
+    |> (Shape_the_term.wrap 4)
+    |> Alcotest.(check string) "same as" 
+    "\x1B[38;2;249;38;114mWe\n\x1B[0m\x1B[38;2;248;248;242m ❤️‍🔥 \x1B[0m\x1B[38;2;248;248;242mo\ncaml\x1B[0m\x1B[38;2;248;248;242m\n 🐫"
+  end;
 ]
 
 let () = Alcotest.run "shape-the-term" [ width_tests ; wrap_tests ]

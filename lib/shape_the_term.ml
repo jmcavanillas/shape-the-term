@@ -23,9 +23,11 @@ let width text =
 
 let wrap width text =
   let result (r, _) = r in
+  let new_line_delimiter = "\n" in
   let add_newline inside_ansi_seq grapheme (wrapped_text, len) =
     match inside_ansi_seq with
-    | false when len >= width -> (wrapped_text ^ "\n" ^ grapheme, 1)
+    | false when grapheme = new_line_delimiter -> (wrapped_text ^ grapheme, 0)
+    | false when len >= width -> (wrapped_text ^ new_line_delimiter ^ grapheme, 1)
     | false -> (wrapped_text ^ grapheme, len + 1)
     | true -> (wrapped_text ^ grapheme, len)
   in
