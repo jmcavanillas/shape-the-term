@@ -15,6 +15,7 @@ depends: [
   "ocaml"
   "dune" {>= "3.12"}
   "uuseg"
+  "uucp"
   "alcotest" {with-test}
   "odoc" {with-doc}
 ]

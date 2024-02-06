@@ -19,7 +19,7 @@
  (name shape-the-term)
  (synopsis "A collection of ANSI-aware methods helping you to transform blocks of text in OCaml")
  (description "A collection of ANSI-aware methods helping you to transform blocks of text in OCaml. This means you can still style your terminal output with ANSI escape sequences without them affecting operations & algorithms. Inspired by https://github.com/muesli/reflow")
- (depends ocaml dune uuseg (alcotest :with-test))
+ (depends ocaml dune uuseg uucp (alcotest :with-test))
  (tags
   (wrap ansi terminal tty)))
 
